@@ -13,6 +13,15 @@ def two_sum (array , n):
                 return True
     return False
 
+def two_sum_fast (array, n):
+    map = {}
+    for i in range(len(array)):
+        diff = k - array[i]
+        if diff in map.keys():
+            return True
+        map[array[i]] = i
+    return False
+
 
 class TestTwoSum(unittest.TestCase):
 
@@ -20,10 +29,10 @@ class TestTwoSum(unittest.TestCase):
         self.assertEqual(two_sum([1, 3, 8, 2],10), True)
     
     def test2(self):
-        self.assertEqual(two_sum([3, 9, 13, 7],8), False)
+        self.assertEqual(two_sum_fast([3, 9, 13, 7],8), False)
     
     def test3(self):
-        self.assertEqual(two_sum([4, 2, 6, 5, 2],4), True)
+        self.assertEqual(two_sum_fast([4, 2, 6, 5, 2],4), True)
 
 if __name__ == '__main__':
     unittest.main()
