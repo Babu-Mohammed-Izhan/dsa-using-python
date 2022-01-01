@@ -1,9 +1,8 @@
 import unittest
 
-# s='cat'
-# t = 'tac'
 
 def validAnagram(s,t):
+    #O(n^2)
     count=0
     if len(s) != len(t):
         return False
@@ -16,15 +15,34 @@ def validAnagram(s,t):
     else:
         return False
 
+def validAnagramOn(s,t):
+
+    # O(n) using Hashmap
+
+    count=0
+    characters = {}
+    if len(s) != len(t):
+        return False
+    
+    for i in s:
+        characters[i] = i
+    for i in t:
+        if i in characters.keys():
+            count += 1
+
+    if count == len(s):
+        return True
+    else:
+        return False        
 
 
 class TestValidAnagram(unittest.TestCase):
 
     def test1(self):
-        self.assertEqual(validAnagram('cat', 'tac'), True)
+        self.assertEqual(validAnagramOn('cat', 'tac'), True)
     
     def test2(self):
-        self.assertEqual(validAnagram('program', 'function'), False)
+        self.assertEqual(validAnagramOn('program', 'function'), False)
     
     def test3(self):
         self.assertEqual(validAnagram('listen', 'silent'), True)
