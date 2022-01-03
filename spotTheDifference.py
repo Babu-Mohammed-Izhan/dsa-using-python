@@ -1,6 +1,7 @@
 import unittest
 
 def spotTheDifference (s , t):
+    # O(n)
     characters = {}
     for i in s:
         characters[i] = i
