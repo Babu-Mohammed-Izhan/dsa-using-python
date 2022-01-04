@@ -16,7 +16,7 @@ def listSumFind (array , n) :
 
 
 
-class TestTwoSum(unittest.TestCase):
+class TestlistSumFind(unittest.TestCase):
 
     def test1(self):
         self.assertEqual(listSumFind([1, 3, 8, 2],10), True)
