@@ -15,7 +15,7 @@ def firstUniqChar (string):
 
 
 
-class TestTwoSum(unittest.TestCase):
+class TestfirstUniqChar(unittest.TestCase):
 
     def test1(self):
         self.assertEqual(firstUniqChar("abcabd"), 2)
