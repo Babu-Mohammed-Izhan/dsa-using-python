@@ -23,12 +23,12 @@ class Solution:
         self.dfs(s, [], res)
         return res
         
-    def dfs(self, s, path, res):
+    def dfs(self, s, curr, res):
         if not s:
-            res.append(path)
+            res.append(curr)
         for i in range(1, len(s)+1):
             if self.isPalindrome(s[:i]):
-                self.dfs(s[i:], path+[s[:i]], res)
+                self.dfs(s[i:], curr+[s[:i]], res)
                 
     def isPalindrome(self,s):
         return s == s[::-1]
