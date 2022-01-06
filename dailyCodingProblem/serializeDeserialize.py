@@ -18,11 +18,11 @@
 
 
 def serialize(root):
-    s = ''
+    s = []
     if root == None:
-        s += '-1'
+        s += ['-1']
     else:
-        s += root.val
+        s += [root.val]
 
     if root != None:
         s += serialize(root.left)
@@ -30,8 +30,12 @@ def serialize(root):
     return s
 
 def deserialize(s):
+    node = Node()
+    for i in s:
+        if i == '-1':
+            return
 
-    return s
+    return 
 
 class Node:
     def __init__(self, val, left=None, right=None):
@@ -52,4 +56,4 @@ node = Node('root', Node('left', Node('left.left')), Node('right'))
 #
 
 
-print(serialize(node))
+print(deserialize(serialize(node)))
