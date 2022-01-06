@@ -1,3 +1,13 @@
+#   Loop through the first string
+#   Assign first character to temp variable 
+#   loop through the array of strings
+#   If the position of character is not equal then return the common_string
+#   If its equal then add character to string and increment position
+#   Return common string at the end
+
+
+
+
 stringArray = ["colorado", "color", "cold"]
 
 
