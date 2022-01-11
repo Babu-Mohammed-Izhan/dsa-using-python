@@ -45,3 +45,34 @@ class Solution:
                 return True
         
         return False
+
+
+#! Problem uses the turtle and hare solution
+#! walker goes only 1 step
+#! runner goes only 2 steps
+#! When runner == walker then theres a cycle
+#! When runner != walker then theres no cycle
+#! If there is a cycle find the start node
+#! To find the start node use walker and runner at the same pace
+#! If both are equal then, its the start node
+
+class Solution:
+    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        walker = runner = head
+        isCycle = False
+        
+        while runner != None and runner.next != None:
+            walker = walker.next
+            runner = runner.next.next
+            if walker == runner:
+                isCycle = True
+                break
+        
+        if not isCycle:
+            return None
+        walker = head
+        while walker != runner:
+            walker = walker.next
+            runner = runner.next
+        return walker
+
