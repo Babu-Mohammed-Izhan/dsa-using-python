@@ -21,6 +21,8 @@
 # Input: piles = [30,11,23,4,20], h = 6
 # Output: 23
 
+#! Use Binary Search
+
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
         l, r = 1, max(piles)
