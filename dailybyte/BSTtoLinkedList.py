@@ -26,6 +26,13 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+#! The prospect of solving this problem in O(1) might look tricky in the beginning, but all you need to know is how preorder traversal works.
+#! The key intuition of this solution is to preserve the "Pre-Order" order as we go.
+
+#! So we maintain a pointer curr while going down the tree. If curr has a left child, we want to shift it to the right while preserving the order. This will be two step process.
+#! Create another pointer p to find the right most point in the left subtree. Then we shift the contents of curr.right into p.right. The tree which we have right now (stage 2 in image) if you notice, still gives the exact same preorder traversal. So now we just shift this to the right of curr.
+
 class Solution:
     def flatten(self, root: Optional[TreeNode]) -> None:
         """
