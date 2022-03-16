@@ -30,11 +30,18 @@
 
 class Solution:
     def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
+        # Initialize an array named stack 
         stack = []
+        # Put i as 0
         i = 0
+        # Iterate through the pushed list
         for x in pushed:
+            # Append each number into an emoty array 
             stack.append(x)
+            # Using a while loop, check if stack is empty or if the top of the stack is equal to current popped value
             while stack and stack[-1] == popped[i]:
+                # Pop the stack once and increment it by one.
                 stack.pop()
                 i += 1
+        # Check if stack is empty, if true sequnce is correct, then its not correct.
         return len(stack) == 0
