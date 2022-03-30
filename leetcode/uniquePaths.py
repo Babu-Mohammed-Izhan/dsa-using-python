@@ -34,3 +34,11 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
         return factorial(m+n-2)// factorial(m-1) // factorial(n-1)
+
+
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        dp = [1]*n
+        for _,j in product(range(1,m), range(1,n)):
+            dp[j] += dp[j-1]
+        return dp[-1]
