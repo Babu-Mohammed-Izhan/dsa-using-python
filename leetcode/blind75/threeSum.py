@@ -9,6 +9,23 @@
 # Input: nums = [-1,0,1,2,-1,-4]
 # Output: [[-1,-1,2],[-1,0,1]]
 
+
+#!  [-1,0,1,2,-1,-4]
+#!    | |         |
+#!    i l         r
+#!  loop through the array with i 
+#!  Create left and right pointers at start and end of the array
+#!  Add l,i,r
+#!  If res < 0 then increment l
+#!  If res > 0 then decrement r
+#!  if res = 0 then add all three values to final result array
+#!  Now move both l and r inside
+#!  Do this for all numbers
+#?  Range 0 to len(nums)-2
+
+
+
+
 def threeSum(nums):
     res = []
     nums.sort()
