@@ -1,7 +1,7 @@
-# 128. Longest Consecutive Sequence
-# Medium
+ #? 128. Longest Consecutive Sequence
+#? Medium
 
-# Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+#? Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
 
 #? You must write an algorithm that runs in O(n) time.
 
@@ -18,20 +18,31 @@
 #? Output: 9
 
 
-
+#! To find the Longest Consecutive Sequence of numbers
 def longestConsecutive(nums):
-    if len(nums) == 0: return 0
+    #! If the length of the array is 0, then return 0
+    if len(nums) == 0: 
+        return 0
+    #! Sort the array after converting it into a set to remove duplicate numbers
     nums = sorted(set(nums))
+    #! Assign the first element of the array to last Number variable
     lastNum = nums[0]
+    #! The current length of the consecutive array wiil be 1
     curLength = 1
+    #! The result value is initialized to 1
     res = 1
     
+    #! Loop through the array starting from the second element
     for i in range(1, len(nums)):
+        #! If the current element is consecutive to the previous number, then increase curLength by 1
         if nums[i] == lastNum + 1:
             curLength += 1
         else:
+        #! Else put current length to 1
             curLength = 1
+        #! Assign res or curLength (Whichever is maximum) to res
         res = max(res, curLength)
+        #! Put lastNum as the current element 
         lastNum = nums[i]
-        
+    #! Return result
     return res
